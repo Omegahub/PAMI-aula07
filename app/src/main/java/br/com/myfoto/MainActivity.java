@@ -33,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent,52);
     }
 
+    public void onVisualizar(View view){
+        Intent intent = new Intent (Intent.ACTION_VIEW);
+        intent.setDataAndType(uri,"imagem/jpeg");
+        startActivity(intent);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (requestCode == 52 && resultCode == RESULT_OK) {
@@ -45,4 +51,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,"Imagem não capturada",Toast.LENGTH_LONG).show();
         }
     }
+
+
 }
